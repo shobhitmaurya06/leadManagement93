@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family:
+        source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@layer base {
+    :root {
+        /* Professional Corporate Blue Color System */
+        --background: 210 20% 98%;
+        --foreground: 215 25% 15%;
+        
+        --card: 0 0% 100%;
+        --card-foreground: 215 25% 15%;
+        
+        --popover: 0 0% 100%;
+        --popover-foreground: 215 25% 15%;
+        
+        /* Primary: Professional Corporate Blue */
+        --primary: 217 91% 45%;
+        --primary-foreground: 0 0% 100%;
+        --primary-hover: 217 91% 40%;
+        --primary-light: 217 91% 92%;
+        
+        /* Secondary: Neutral Gray */
+        --secondary: 214 15% 94%;
+        --secondary-foreground: 215 25% 25%;
+        
+        --muted: 214 15% 96%;
+        --muted-foreground: 215 15% 45%;
+        
+        /* Accent: Complementary Teal */
+        --accent: 186 75% 45%;
+        --accent-foreground: 0 0% 100%;
+        --accent-light: 186 75% 92%;
+        
+        /* Status Colors */
+        --success: 142 76% 36%;
+        --success-foreground: 0 0% 100%;
+        --success-light: 142 76% 95%;
+        
+        --warning: 45 93% 47%;
+        --warning-foreground: 0 0% 100%;
+        --warning-light: 45 93% 95%;
+        
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --destructive-light: 0 84% 95%;
+        
+        --info: 199 89% 48%;
+        --info-foreground: 0 0% 100%;
+        --info-light: 199 89% 95%;
+        
+        /* Border and Input */
+        --border: 214 20% 88%;
+        --input: 214 20% 88%;
+        --ring: 217 91% 45%;
+        
+        /* Chart Colors - Professional Palette */
+        --chart-1: 217 91% 45%;  /* Primary Blue */
+        --chart-2: 186 75% 45%;  /* Teal */
+        --chart-3: 142 76% 36%;  /* Green */
+        --chart-4: 45 93% 47%;   /* Amber */
+        --chart-5: 280 67% 48%;  /* Purple */
+        
+        /* Professional Shadows */
+        --shadow-sm: 0 1px 2px 0 hsl(215 25% 15% / 0.05);
+        --shadow-md: 0 4px 6px -1px hsl(215 25% 15% / 0.08), 0 2px 4px -1px hsl(215 25% 15% / 0.04);
+        --shadow-lg: 0 10px 15px -3px hsl(215 25% 15% / 0.1), 0 4px 6px -2px hsl(215 25% 15% / 0.05);
+        
+        --radius: 0.5rem;
+        --transition: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .dark {
+        --background: 215 28% 10%;
+        --foreground: 210 20% 98%;
+        --card: 215 25% 12%;
+        --card-foreground: 210 20% 98%;
+        
+        --popover: 215 25% 12%;
+        --popover-foreground: 210 20% 98%;
+        
+        --primary: 217 91% 55%;
+        --primary-foreground: 0 0% 100%;
+        --primary-hover: 217 91% 60%;
+        --primary-light: 217 91% 15%;
+        
+        --secondary: 215 20% 18%;
+        --secondary-foreground: 210 20% 90%;
+        
+        --muted: 215 20% 16%;
+        --muted-foreground: 215 15% 65%;
+        
+        --accent: 186 75% 50%;
+        --accent-foreground: 0 0% 100%;
+        --accent-light: 186 75% 18%;
+        
+        --success: 142 76% 45%;
+        --success-foreground: 0 0% 100%;
+        --success-light: 142 76% 15%;
+        
+        --warning: 45 93% 55%;
+        --warning-foreground: 215 28% 10%;
+        --warning-light: 45 93% 18%;
+        
+        --destructive: 0 84% 65%;
+        --destructive-foreground: 0 0% 100%;
+        --destructive-light: 0 84% 18%;
+        
+        --info: 199 89% 55%;
+        --info-foreground: 0 0% 100%;
+        --info-light: 199 89% 18%;
+        
+        --border: 215 20% 20%;
+        --input: 215 20% 20%;
+        --ring: 217 91% 55%;
+        
+        --chart-1: 217 91% 55%;
+        --chart-2: 186 75% 50%;
+        --chart-3: 142 76% 45%;
+        --chart-4: 45 93% 55%;
+        --chart-5: 280 67% 58%;
+        
+        --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
+        --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.4), 0 2px 4px -1px hsl(0 0% 0% / 0.3);
+        --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.5), 0 4px 6px -2px hsl(0 0% 0% / 0.4);
+    }
+}
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* Smooth transitions for interactive elements */
+.transition-smooth {
+    transition: var(--transition);
+}
+
+/* Table styles */
+.table-hover tbody tr {
+    @apply transition-smooth;
+}
+
+
+/* Professional button hover effects */
+.btn-hover {
+    @apply transition-smooth;
+}
+
+.btn-hover:hover {
+    transform: translateY(-1px);
+}
+
+/* Shadow utilities */
+.shadow-sm-custom {
+    box-shadow: var(--shadow-sm);
+}
+
+.shadow-md-custom {
+    box-shadow: var(--shadow-md);
+}
+
+.shadow-lg-custom {
+    box-shadow: var(--shadow-lg);
+}
+
+/* Animation for new lead notifications */
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slideInDown {
+    animation: slideInDown 0.3s ease-out;
+}
+
+/* Status badge animations */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse-slow {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Gradient overlays for premium sections */
+.gradient-overlay {
+    position: relative;
+}
+
+.gradient-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.03) 0%, hsl(var(--accent) / 0.03) 100%);
+    pointer-events: none;
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}
+
+
